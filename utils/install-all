@@ -1,0 +1,12 @@
+#!/usr/bin/env sh
+
+for dir in ??-*
+do
+  echo cd $dir
+  cd $dir
+  echo npm install
+  npm install
+  echo cd ..
+  cd ..
+done
+
