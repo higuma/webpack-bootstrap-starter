@@ -1,6 +1,5 @@
 #!/usr/bin/env sh
 
-rm -rf .tmp
 mkdir .tmp
 cp utils/index.html .tmp/
 cp -r 01-html+pug/www/ .tmp/01/

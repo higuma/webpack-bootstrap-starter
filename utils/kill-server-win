@@ -1,0 +1,5 @@
+#!/usr/bin/env sh
+
+# Kill dev-server (for Windows + Git Bash: it doesn't stop with Ctrl-C)
+# See: https://github.com/webpack/webpack-dev-server/issues/860
+taskkill //pid `netstat -aon | grep 5555 | grep -P '(?<=LISTENING).*' -o | grep -P '\\d*' -o` //f
