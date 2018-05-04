@@ -1,0 +1,82 @@
+mixin link(url)
+  a(href=url target="_blank")
+    block
+
+doctype html
+html(lang="en")
+  head
+    meta(charset="utf-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no")
+    title Webpack+Bootstrap starter (6)
+  body
+    div.container
+      h1.display-4 Webpack+Bootstrap starter (6)
+      p.lead Step-by-step projects for Webpack+Bootstrap startup
+      ol
+        li Genarating HTML (with 
+          +link("https://github.com/jantimon/html-webpack-plugin") HtmlWebpackPlugin
+          |  and 
+          +link("https://github.com/pugjs/pug-loader/") pug-loader
+          | )
+        li Injecting 
+          code= "<style>" 
+          |  (with 
+          +link("https://github.com/webpack-contrib/style-loader") style-loader
+          |  and 
+          +link("https://github.com/webpack-contrib/css-loader") css-loader
+          | )
+        li Using Sass (with 
+          +link("https://github.com/sass/node-sass") node-sass
+          |  and 
+          +link("https://github.com/webpack-contrib/sass-loader") sass-loader
+          | )
+        li Using 
+          +link("https://github.com/postcss/autoprefixer") Autoprefixer
+          |  (with 
+          +link("https://github.com/postcss/postcss-loader") postcss-loader
+          | )
+        li Generating a separate CSS (with 
+          +link("https://github.com/webpack-contrib/extract-text-webpack-plugin") extract-text-webpack-pugin
+          | )
+        li Using 
+          +link("http://getbootstrap.com/") Bootstrap
+
+      h2#autoprefixer-example Autoprefixer example
+      p.my-2.cannot-select This paragraph uses 
+        code user-select: none;
+        |  (you cannot select this line).
+      small (Check for CSS output to determine Autoprefixer is working properly)
+
+      h2.mt-4#standard-bootstrap-examples Standard Bootstrap examples
+      div.dropdown.mt-3
+        button.btn.btn-outline-secondary.dropdown-toggle#dropdown-menu-button(type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false") Dropdown example
+        div.dropdown-menu(aria-labelledby="dropdown-menu-button")
+          each n in [1,2,3,4,5]
+            a.dropdown-item(href="#")= `Menu item ${n}`
+      div.mt-3
+        a.btn.btn-outline-secondary(data-toggle="collapse" href="#collapse-example" aria-control="collapse-example" aria-expanded="false") Collapse example
+      table.table.mt-3.collapse#collapse-example
+        thead
+          tr
+            each c in ["A","B","C"]
+              th(scope="col")= c
+        tbody
+          each r in [1,2,3]
+            tr
+              each c in [1,2,3]
+                td= `Item ${r}-${c}`
+      div.mt-3
+        button.btn.btn-outline-secondary(type="button" data-toggle="modal" data-target="#modal-example") Modal example
+      div.modal.fade#modal-example(tabindex="-1" role="dialog" aria-labelledby="modal-example-label" aria-hidden="true")
+        div.modal-dialog(role="document")
+          div.modal-content
+            div.modal-header
+              h5.modal-title#modal-example-label Modal title
+              button.close(type="button" data-dismiss="modal" aria-label="Close")
+                span(aria-hidden="true") &times;
+            div.modal-body Bootstrap modal example
+            div.modal-footer
+              button.btn.btn-secondary(type="button" data-dismiss="modal") Close
+              button.btn.btn-primary(type="button") Save changes
+
+      p.mb-5

@@ -1,0 +1,18 @@
+body {
+  color: darkslategray;
+  margin: 1rem 2rem;
+}
+
+code {
+  color: orangered;
+}
+
+a {
+  color: slateblue;
+  text-decoration: none;
+}
+
+a:hover {
+  color: skyblue;
+  text-decoration: underline;
+}

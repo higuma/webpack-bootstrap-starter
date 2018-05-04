@@ -1,0 +1,25 @@
+mixin link(url)
+  a(href=url target="_blank")
+    block
+
+doctype html
+html(lang="en")
+  head
+    meta(charset="utf-8")
+    title Webpack+Bootstrap starter (2)
+  body
+    h1 Webpack+Bootstrap starter (2)
+    p Step-by-step projects for Webpack+Bootstrap startup
+    ol
+      li Genarating HTML (with 
+        +link("https://github.com/jantimon/html-webpack-plugin") HtmlWebpackPlugin
+        |  and 
+        +link("https://github.com/pugjs/pug-loader/") pug-loader
+        | )
+      li Injecting 
+        code= "<style>" 
+        |  (with 
+        +link("https://github.com/webpack-contrib/style-loader") style-loader
+        |  and 
+        +link("https://github.com/webpack-contrib/css-loader") css-loader
+        | )

@@ -1,0 +1,161 @@
+mixin link(url)
+  a(href=url target="_blank")
+    block
+
+doctype html
+html(lang="en")
+  head
+    meta(charset="utf-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no")
+    title Webpack+Bootstrap starter (8)
+  body
+    div.container
+      h1.display-4 Webpack+Bootstrap starter (8)
+      p.lead Step-by-step projects for Webpack+Bootstrap startup
+      ol
+        li Genarating HTML (with 
+          +link("https://github.com/jantimon/html-webpack-plugin") HtmlWebpackPlugin
+          |  and 
+          +link("https://github.com/pugjs/pug-loader/") pug-loader
+          | )
+        li Injecting 
+          code= "<style>" 
+          |  (with 
+          +link("https://github.com/webpack-contrib/style-loader") style-loader
+          |  and 
+          +link("https://github.com/webpack-contrib/css-loader") css-loader
+          | )
+        li Using Sass (with 
+          +link("https://github.com/sass/node-sass") node-sass
+          |  and 
+          +link("https://github.com/webpack-contrib/sass-loader") sass-loader
+          | )
+        li Using 
+          +link("https://github.com/postcss/autoprefixer") Autoprefixer
+          |  (with 
+          +link("https://github.com/postcss/postcss-loader") postcss-loader
+          | )
+        li Generating a separate CSS (with 
+          +link("https://github.com/webpack-contrib/extract-text-webpack-plugin") extract-text-webpack-pugin
+          | )
+        li Using 
+          +link("http://getbootstrap.com/") Bootstrap
+        li Customizing 
+          +link("http://getbootstrap.com/") Bootstrap
+        li Using 
+          +link("http://jquery.com/") jQuery
+          |  with 
+          +link("http://getbootstrap.com/") Bootstrap
+
+      h2#autoprefixer-example Autoprefixer example
+      p.my-2.cannot-select This paragraph uses 
+        code user-select: none;
+        |  (you cannot select this line).
+      small (Check for CSS output to determine Autoprefixer is working properly)
+
+      h2.mt-4#standard-bootstrap-examples Standard Bootstrap examples
+      div.dropdown.mt-3
+        button.btn.btn-outline-secondary.dropdown-toggle#dropdown-menu-button(type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false") Dropdown example
+        div.dropdown-menu(aria-labelledby="dropdown-menu-button")
+          each n in [1,2,3,4,5]
+            a.dropdown-item(href="#")= `Menu item ${n}`
+      div.mt-3
+        a.btn.btn-outline-secondary(data-toggle="collapse" href="#collapse-example" aria-control="collapse-example" aria-expanded="false") Collapse example
+      table.table.mt-3.collapse#collapse-example
+        thead
+          tr
+            each c in ["A","B","C"]
+              th(scope="col")= c
+        tbody
+          each r in [1,2,3]
+            tr
+              each c in [1,2,3]
+                td= `Item ${r}-${c}`
+      div.mt-3
+        button.btn.btn-outline-secondary(type="button" data-toggle="modal" data-target="#modal-example") Modal example
+      div.modal.fade#modal-example(tabindex="-1" role="dialog" aria-labelledby="modal-example-label" aria-hidden="true")
+        div.modal-dialog(role="document")
+          div.modal-content
+            div.modal-header
+              h5.modal-title#modal-example-label Modal title
+              button.close(type="button" data-dismiss="modal" aria-label="Close")
+                span(aria-hidden="true") &times;
+            div.modal-body Bootstrap modal example
+            div.modal-footer
+              button.btn.btn-secondary(type="button" data-dismiss="modal") Close
+              button.btn.btn-primary(type="button") Save changes
+
+      h2.mt-4#customized-bootstrap-examples Customized Bootstrap examples
+      h5.mt-3#custom-breadcrumb
+        +link("https://getbootstrap.com/docs/4.1/components/breadcrumb/#changing-the-separator") Breadcrumb with custom separators
+      nav(aria-label="breadcrumb")
+        ol.breadcrumb
+          li.breadcrumb-item: a(href="#") Home
+          li.breadcrumb-item: a(href="#") Projects
+          li.breadcrumb-item.active(aria-current="page") Webpack
+      h5.mt-3#background-gradient 
+        +link("http://getbootstrap.com/docs/4.1/utilities/colors/#background-gradient") Background gradient
+      each c in "primary secondary success danger warning info light dark".split(" ")
+        div.row.no-gutters
+          - let textCol = `text-${c == "light" ? "dark" : "white"}`
+          div.col
+            div(class=`p-3 mb-2 bg-${c} ${textCol}`)
+              = `.bg-${c}`
+          div.col
+            div(class=`p-3 mb-2 bg-gradient-${c} ${textCol}`)
+              = `.bg-gradient-${c}`
+
+      h2.mt-4#bootstrap-jquery-examples Bootstrap + jQuery examples
+      h5.mt-3#tooltip-and-popover
+        +link("https://getbootstrap.com/docs/4.1/components/tooltips/") Tooltip
+        |  and 
+        +link("https://getbootstrap.com/docs/4.1/components/popovers/") Popover
+      button.btn.btn-outline-secondary(role="button" data-toggle="tooltip" title="Tooltip example") Tooltip demo
+      button.btn.btn-outline-secondary(role="button" data-toggle="popover" title="Popover example" data-content="Sample popover using popper.js.") Popover demo
+      h5.mt-4#custom-file-browsers
+        +link("https://getbootstrap.com/docs/4.1/components/forms/#file-browser") Custom file browsers
+      each lang in [["en","Choose file"],["es","Seleccionar Archivo"],["ja","選択されていません"]]
+        div.custom-file.my-1
+          input.custom-file-input(lang=lang[0] type="file" id=`custom-file-${lang[0]}`)
+          label.custom-file-label(for=`custom-file-${lang[0]}`)= lang[1]
+      h5.mt-4#modal-variation
+        +link("https://getbootstrap.com/docs/4.1/components/forms/#validation") Modal validation
+      form.mb-4.needs-validation(novalidate)
+        div.form-row
+          div.col-md-4.mb-3
+            label(for="validationCustom01") First name
+            input.form-control#validationCustom01(type="text" placeholder="First name" value="Mark" required)
+            div.valid-feedback Looks good!
+            div.invalid-feedback Please input your name.
+          div.col-md-4.mb-3
+            label(for="validationCustom02") Last name
+            input.form-control#validationCustom02(type="text" placeholder="Last name" value="Otto" required)
+            div.valid-feedback Looks good!
+          div.col-md-4.mb-3
+            label(for="validationCustomUsername") Username
+            div.input-group
+              div.input-group-prepend
+                span.input-group-text#inputGroupPrepend @
+              input.form-control#validationCustomUsername(type="text" placeholder="Username" aria-describedby="inputGroupPrepend" required)
+              div.invalid-feedback Please choose a username.
+        div.form-row
+          div.col-md-6.mb-3
+            label(for="validationCustom03") City
+            input.form-control#validationCustom03(type="text" placeholder="City" required)
+            div.invalid-feedback Please provide a valid city.
+          div.col-md-3.mb-3
+            label(for="validationCustom04") State
+            input.form-control#validationCustom04(type="text" placeholder="State" required)
+            div.invalid-feedback Please provide a valid state.
+          div.col-md-3.mb-3
+            label(for="validationCustom05") Zip
+            input.form-control#validationCustom05(type="text" placeholder="Zip" required)
+            div.invalid-feedback Please provide a valid zip.
+        div.form-group
+          div.form-check
+            input.form-check-input#invalidCheck(type="checkbox" value="" required)
+            label.form-check-label(for="invalidCheck") Agree to terms and conditions
+            div.invalid-feedback You must agree before submitting.
+        button.btn.btn-primary(type="submit") Submit form
+
+      p.mb-5

@@ -1,0 +1,44 @@
+mixin link(url)
+  a(href=url target="_blank")
+    block
+
+doctype html
+html(lang="en")
+  head
+    meta(charset="utf-8")
+    title Webpack+Bootstrap starter (5)
+  body
+    h1 Webpack+Bootstrap starter (5)
+    p Step-by-step projects for Webpack+Bootstrap startup
+    ol
+      li Genarating HTML (with 
+        +link("https://github.com/jantimon/html-webpack-plugin") HtmlWebpackPlugin
+        |  and 
+        +link("https://github.com/pugjs/pug-loader/") pug-loader
+        | )
+      li Injecting 
+        code= "<style>" 
+        |  (with 
+        +link("https://github.com/webpack-contrib/style-loader") style-loader
+        |  and 
+        +link("https://github.com/webpack-contrib/css-loader") css-loader
+        | )
+      li Using Sass (with 
+        +link("https://github.com/sass/node-sass") node-sass
+        |  and 
+        +link("https://github.com/webpack-contrib/sass-loader") sass-loader
+        | )
+      li Using 
+        +link("https://github.com/postcss/autoprefixer") Autoprefixer
+        |  (with 
+        +link("https://github.com/postcss/postcss-loader") postcss-loader
+        | )
+      li Generating a separate CSS (with 
+        +link("https://github.com/webpack-contrib/extract-text-webpack-plugin") extract-text-webpack-pugin
+        | )
+
+    h2#autoprefixer-example Autoprefixer example
+    p.cannot-select This paragraph uses 
+      code user-select: none;
+      |  (you cannot select this line).
+    small (Check for CSS output to determine Autoprefixer is working properly)

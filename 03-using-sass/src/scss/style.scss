@@ -1,0 +1,18 @@
+body {
+  color: darkslategray;
+  margin: 1rem 2rem;
+}
+
+code {
+  color: orangered;
+}
+
+// Sass syntax example (Referencing a parent selector by &)
+a {
+  color: slateblue;
+  text-decoration: none;
+  &:hover {
+    color: skyblue;
+    text-decoration: underline;
+  }
+}

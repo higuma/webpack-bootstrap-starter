@@ -1,0 +1,13 @@
+#!/usr/bin/env sh
+
+rm -rf .tmp
+mkdir .tmp
+cp utils/index.html .tmp/
+cp -r 01-html+pug/www/ .tmp/01/
+cp -r 02-injecting-css-style/www/ .tmp/02/
+cp -r 03-using-sass/www/ .tmp/03/
+cp -r 04-postcss+autoprefixer/www/ .tmp/04/
+cp -r 05-css-extract-text/www/ .tmp/05/
+cp -r 06-using-bootstrap/www/ .tmp/06/
+cp -r 07-customizing-bootstrap/www/ .tmp/07/
+cp -r 08-using-jquery/www/ .tmp/08/

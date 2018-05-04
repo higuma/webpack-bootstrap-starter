@@ -1,0 +1,27 @@
+// Customize Bootstrap Sass variables
+$enable-gradients: true;
+$enable-shadows: true;
+$breadcrumb-divider: "\00bb";
+$custom-file-text: (
+  en: "Browse",
+  es: "Elegir",
+  ja: "ファイル選択"
+);
+
+// Import Bootstrap
+@import "~bootstrap/scss/bootstrap.scss";
+
+// Autoprefixer example
+.cannot-select {
+  user-select: none;
+}
+
+// Links for headings with ID's
+a.link-heading {
+  text-decoration: none;
+  margin-left: 0.5rem;
+  color:white;
+  &:hover {
+    color:skyblue;
+  }
+}
