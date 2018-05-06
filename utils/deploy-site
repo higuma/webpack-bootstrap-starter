@@ -1,6 +1,0 @@
-#!/usr/bin/env sh
-
-cp .tmp/* .
-git add .
-git commit -m 'updated gh-pages'
-git push origin gh-pages
