@@ -29,7 +29,7 @@ module.exports = {
             options: { sourceMap: true, plugins: [require('autoprefixer')] }
           },
           { loader: 'sass-loader',
-            options: { sourceMap: true, style: 'compressed' }
+            options: { sourceMap: true, outputStyle: 'expanded' }
           }
         ])
       }

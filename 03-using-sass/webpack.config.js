@@ -26,7 +26,7 @@ module.exports = {
             options: { sourceMap: true, importLoaders: 1 /*sass*/ }
           },
           { loader: 'sass-loader',
-            options: { sourceMap: true, }
+            options: { sourceMap: true, outputStyle: 'expanded' }
           }
         ]
       }
