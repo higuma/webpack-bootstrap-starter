@@ -1,5 +1,5 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin'),
-      ExtractTextPlugin = require('extract-text-webpack-plugin'),
+      MiniCssExtractPlugin = require('mini-css-extract-plugin'),
       WWW_PATH = require('path').join(__dirname, 'www');
 
 module.exports = {
@@ -21,7 +21,10 @@ module.exports = {
         }
       },
       { test: /.scss$/,
-        use: ExtractTextPlugin.extract([
+        use: [
+          { loader: MiniCssExtractPlugin.loader,
+            options: {}
+          },
           { loader: 'css-loader',
             options: { sourceMap: true, importLoaders: 2  /*postcss+sass*/ }
           },
@@ -31,7 +34,7 @@ module.exports = {
           { loader: 'sass-loader',
             options: { sourceMap: true, outputStyle: 'expanded' }
           }
-        ])
+        ]
       }
     ]
   },
@@ -41,7 +44,9 @@ module.exports = {
       template: './src/pug/index.pug',
       filename: 'index.html'
     }),
-    new ExtractTextPlugin('css/style.css')
+    new MiniCssExtractPlugin({
+      filename: 'css/style.css'
+    })
   ],
 
   devServer: {
