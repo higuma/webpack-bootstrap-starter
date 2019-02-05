@@ -14,13 +14,13 @@ module.exports = {
 
   module: {
     rules: [
-      { test: /.pug$/,
+      { test: /\.pug$/,
         use: {
           loader: 'pug-loader',
           options: { pretty: true }
         }
       },
-      { test: /.scss$/,
+      { test: /\.scss$/,
         use: [
           { loader: MiniCssExtractPlugin.loader,
             options: {}

@@ -13,7 +13,7 @@ module.exports = {
 
   module: {
     rules: [
-      { test: /.pug$/,
+      { test: /\.pug$/,
         use: {
           loader: 'pug-loader',
           options: { pretty: true }
