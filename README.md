@@ -10,4 +10,4 @@ Step-by-step projects for Webpack+Bootstrap startup ⇒ [Demo site](https://higu
 6. Using [Bootstrap](https://getbootstrap.com/)
 7. Customizing Bootstrap
 8. Using [jQuery](http://jquery.com/) with Bootstrap
-9. Using ES6 syntax and modules with [Babel]("http://babeljs.io/")
+9. Using ES6 syntax and modules with [Babel](http://babeljs.io/)
