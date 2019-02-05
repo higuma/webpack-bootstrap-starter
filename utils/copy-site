@@ -11,3 +11,4 @@ cp -r 05-css-extract-text/www/ .tmp/05/
 cp -r 06-using-bootstrap/www/ .tmp/06/
 cp -r 07-customizing-bootstrap/www/ .tmp/07/
 cp -r 08-using-jquery/www/ .tmp/08/
+cp -r 09-using-babel/www/ .tmp/09/
