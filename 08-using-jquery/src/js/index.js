@@ -4,8 +4,11 @@ import '../scss/style.scss';
 // Import Bootstrap JavaScript plugin
 import 'bootstrap';
 
-// Use jQuery
+// Import (use) jQuery
 import $ from 'jquery';
+
+// jQuery & Bootstrap plugins code examples
+// ----------------------------------------
 
 // Add self links to headings with ID's
 $('h2[id],h3[id],h4[id],h5[id],h6[id]').each(function() {
